@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+
+{% extends "base.html" %} {% block title %}Contact • {% endblock title %}
+{%block body %}
+
+
+{% load static %}
+
+
+<link rel="stylesheet" href="static/css/contact.css">
+
+<div class="container-fluid px-0 mb-5">
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="true">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://source.unsplash.com/random/1600x500/?hogwarts-letter,phonebooth,letter,mailbox,mail"
+                    class="d-block w-100" alt="..." />
+                <div class="carousel-caption text-black text d-none d-md-block">
+                    <h5 style="background: rgba(255, 255, 255, 0.336); font-size: 2rem">
+                        <i>Feel Free to Reach Out</i>
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="container mb-5">
+    <form method="post" action="/contact">
+    {% csrf_token %}
+    
+        <div class="form-group my-80">
+            <label class="mb-3" for="name">Name</label>
+            <input type="name" class="form-control mb-3" id="name" placeholder="Your Name" name="name" />
+        </div>
+
+        <div class="form-group my-80">
+            <label class="mb-3" for="email">Your Email</label>
+            <input type="email" class="form-control mb-3" id="email" placeholder="Your Email" name="email" />
+        </div>
+
+        <div class="form-group my-80">
+            <label class="mb-3" for="phone">Phone</label>
+            <input type="phone" class="form-control mb-3" id="phone" placeholder="Your Phone no" name="phone" />
+        </div>
+
+        <div class="form-group">
+            <label class="mb-3" for="feedback">Feedback</label>
+            <textarea class="form-control mb-3" id="feedback" rows="3" name="feedback"></textarea>
+        </div>
+        <button style="border-radius: 20px ; padding-left: 3rem; padding-right: 3rem; margin-left: 42%; box-shadow:
+        rgb(82, 80, 80) 0px 5px 0px 0px ;" type="submit" class="btn btn-dark mt-2">SUBMIT</button>
+    </form>
+</div> -->
+
+
+
+
+<div class="form-container">
+
+    
+    <form method="post" action="/contact">
+    {% csrf_token %} 
+
+    <div class="forms">
+        <label class="lbl" for="name">Name</label><br>
+        <input type="name" class="form-field" id="name-input" placeholder="Your Name" name="name" required="true" />
+    </div>
+    <div class="forms">
+        <label class="lbl" for="email">Email </label><br>
+        <input type="email" class="form-field" id="email-input" placeholder="Your Email Address" name="email" required="true"/>
+    </div>
+    <div class="forms">
+        <label class="lbl" for="email">Mobile</label><br>
+        <input type="phone" class="form-field" id="phone-input" placeholder="Your Mobile no" name="phone" required="true"/>
+    </div>
+    <div class="forms">
+        <label class="lbl" for="feedback">Feedback</label><br>
+        <textarea class="feedback-field" id="feedback-input" rows="3" placeholder="Feel Free to Express:)" name="feedback"></textarea>
+    </div>
+
+    <button type="submit" class="subbtn">SUBMIT</button>
+
+
+    </form>
+</div>
+
+
+
+
+{% endblock body %}

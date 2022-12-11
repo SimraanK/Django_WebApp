@@ -1,0 +1,76 @@
+ body {
+    background-color: rgb(75, 75, 75);
+}
+
+div.form-container {
+
+margin: 0px 105px 50px 105px;
+
+}
+
+.lbl, .form-field {
+
+    margin: 6px;
+    font-weight: 500;
+}
+
+.lbl {
+
+    color: rgb(14, 14, 14);
+}
+
+input.form-field {
+
+    background-color: black;
+    color: rgb(92, 92, 92);
+    border-radius: 8px;
+    padding: 8px;
+    width: 100%;
+    
+
+} 
+
+
+input.form-field:hover {
+
+    box-shadow: rgb(0 0 0 / 100%) 6px 4px 6px;
+}
+
+.feedback-field {
+
+    background-color: black;
+    color: rgb(92, 92, 92);
+    border-radius: 8px;
+    padding: 8px; 
+    width: 100%;
+    font-weight: 500;
+
+} 
+
+
+.feedback-field:hover {
+
+    box-shadow: rgb(0 0 0 / 100%) 6px 4px 6px;
+
+}
+
+.subbtn {
+    text-align: center;
+    border-radius: 20px;
+    padding: 10px 50px;
+    margin-left: 42%;
+    margin-top: 10px;
+    background-color: black;
+    color: darkgrey;
+    font-weight: 500;
+}
+
+.subbtn:hover {
+
+    box-shadow: rgb(0 0 0 / 100%) 1px 1px 1px 1px;
+    background-color: black;
+    color: rgb(41, 41, 41);
+    
+    
+}
+ 

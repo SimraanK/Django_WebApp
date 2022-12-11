@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> {% block title %} {% endblock title %}WebApp</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'css/base.css'%}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/home">My WebApp</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/about">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/contact">Contact</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link active dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Services
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="/AI">Artificial Intelligence(AI )</a></li>
+              <!-- <li><hr class="dropdown-divider"></li> -->
+              <li><a class="dropdown-item" href="/MachineLearning">Machine Learning</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="/DataScience">Data Science</a></li>
+            </ul>
+          </li>
+
+        </ul>
+        <form class="d-flex" role="search">
+          <input style="background-color: black; color: rgb(92, 92, 92);" class="form-control me-2" type="search"
+            placeholder="Search" aria-label="Search">
+          <button style="color: darkgray; border-color: darkgray;" class="btn btn-outline-secondary"
+            type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+
+
+  {% if messages %}
+  {% for message in messages %}
+  <div style="border-radius: 0px; padding: 10px; background-color: darkgrey; padding-left: 20px;"
+    class="alert alert-{{ message.tags }} alert-dismissible fade show my-0 border-0" role="alert">
+    <strong style="color: black;">{{ message}}</strong>
+    <button style="padding-bottom: 5px;" type="button" class="btn-close text-white" data-bs-dismiss="alert"
+      aria-label="Close"></button>
+  </div>
+  {% endfor %}
+  {% endif %}
+
+
+  {% block body %}
+
+
+  <div class="container-fluid px-0">
+
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="true">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+          aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+          aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+          aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://source.unsplash.com/random/1600x500/?coding,programming" class="d-block w-100" alt="...">
+          <div class="carousel-caption text-black d-none d-md-block">
+            <h5 style="background: rgba(255, 255, 255, 0.363); font-size: 2rem"><i>Let's Start Your Journey With
+                Technology</i></h5>
+
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://source.unsplash.com/random/1600x500/?datascience,wallstreat,professional"
+            class="d-block w-100" alt="...">
+          <div class="carousel-caption text-black d-none d-md-block">
+            <h5 style="background: rgba(255, 255, 255, 0.336);  font-size: 2rem"><i>Start Your Career With
+                Profession</i></h5>
+
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://source.unsplash.com/random/1600x500/?robot,AI,ML,transformers" class="d-block w-100"
+            alt="...">
+          <div class="carousel-caption text-black d-none d-md-block">
+            <h5 style="background: rgba(255, 255, 255, 0.336);  font-size: 2rem"><i>Start Your Journey With
+                Artificial-Intelligence(AI)</i></h5>
+
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+  <main style="background-color: black;">
+
+    <section class="py-5 text-center container">
+      <div class="row py-lg-5">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <h1 style="font-size: 4rem; font-weight: 200;" class="fw-light">Computer Science</h1>
+          <p style="font-weight: 400;" class="lead text-muted">Computer Science is no more about Computers than
+            Astronomy is about Telescopes</p>
+          <p>
+            <a href="#" class="btn btn-dark my-2">Main call to action</a>
+            <a href="#" class="btn btn-secondary my-2">Secondary action</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div style="background-color: rgb(51, 51, 51);" class="album py-5">
+      <!-- <div style="background-color: #111827;" class="album py-5"> -->
+      <div class="container-2">
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          <div class="col">
+            <div style="background-color: black;" class="card ">
+              <img src="https://source.unsplash.com/random/1600x1000/?coding,programming" class="d-block w-100"
+                alt="...">
+
+              <div class="card-body">
+                <p style="color: #6c757d;" class="card-text"> This is a wider card with supporting text below as a
+                  natural lead-in to additional
+                  content. This content is a little bit longer.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div style="background-color: black;" class="card ">
+              <img src="https://source.unsplash.com/random/1600x1000/?computer" class="d-block w-100" alt="...">
+
+              <div class="card-body">
+                <p style="color: #6c757d;" class="card-text">This is a wider card with supporting text below as a
+                  natural lead-in to additional
+                  content. This content is a little bit longer.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div style="background-color: black;" class="card ">
+              <img src="https://source.unsplash.com/random/1600x1000/?robots,AI" class="d-block w-100" alt="...">
+
+              <div class="card-body">
+                <p style="color: #6c757d;" class="card-text">Technology has been expanding and inhibiting the world with
+                  Artificial-Intelligence(AI).</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div style="background-color: black;" class="card ">
+              <img src="https://source.unsplash.com/random/1600x1000/?server" class="d-block w-100" alt="...">
+
+              <div class="card-body">
+                <p style="color: #6c757d;" class="card-text">This is a wider card with supporting text below as a
+                  natural lead-in to additional
+                  content. This content is a little bit longer.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div style="background-color: black;" class="card ">
+              <img src="https://source.unsplash.com/random/1600x1000/?offices" class="d-block w-100" alt="...">
+
+              <div class="card-body">
+                <p style="color: #6c757d;" class="card-text">This is a wider card with supporting text below as a
+                  natural lead-in to additional
+                  content. This content is a little bit longer.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div style="background-color: black;" class="card">
+              <img src="https://source.unsplash.com/random/1600x1000/?wallstreet,siliconvalley" class="d-block w-100"
+                alt="...">
+
+              <div class="card-body">
+                <p style="color: #6c757d;" class="card-text">This is a wider card with supporting text below as a
+                  natural lead-in to additional
+                  content. This content is a little bit longer.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <div style="background-color: black;" class="card ">
+              <img src="https://source.unsplash.com/random/1600x1000/?developers,hackers" class="d-block w-100"
+                alt="...">
+
+              <div class="card-body">
+                <p style="color: #6c757d;" class="card-text">This is a wider card with supporting text below as a
+                  natural lead-in to additional
+                  content. This content is a little bit longer.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div style="background-color: black;" class="card ">
+              <img src="https://source.unsplash.com/random/1600x1000/?laptop,metaverse,VR" class="d-block w-100"
+                alt="...">
+
+              <div class="card-body">
+                <p style="color: #6c757d;" class="card-text">This is a wider card with supporting text below as a
+                  natural lead-in to additional
+                  content. This content is a little bit longer.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div style="background-color: black; " class="card ">
+              <img src="https://source.unsplash.com/random/1600x1000/?space,nebulas" class="d-block w-100" alt="...">
+
+              <div class="card-body">
+                <p style="color: #6c757d;" class="card-text">This is a wider card with supporting text below as a
+                  natural lead-in to additional
+                  content. This content is a little bit longer.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  </div>
+                  <small class="text-muted">9 mins</small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+      </div>
+    </div>
+
+
+  </main>
+
+
+
+
+  <footer>
+
+
+
+
+
+
+    <div class="footrow">
+
+
+
+      <div class="foot-container">
+
+
+
+
+        <div class="col-4">
+
+          <svg class="logoo" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round"
+            stroke-linejoin="round" stroke-width="2">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+          </svg>
+
+
+
+          <h5 class="brd">My WebApp</h5>
+          <p class="brdhdn">Created With ❤</p>
+
+        </div>
+
+
+
+        <div class="col-3">
+          <h4>Courses</h4>
+          <nav class="link-nav">
+            <ul>
+              <li>
+                <a href="#">Python Programming</a>
+              </li>
+              <li>
+                <a href="#">Java Module</a>
+              </li>
+              <li>
+                <a href="#">Swift for iPhone</a>
+              </li>
+              <li>
+                <a href="#">Binary 0101</a>
+              </li>
+              <hr>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="col-3">
+          <h4>Our Team</h4>
+          <nav class="link-nav-2">
+            <ul>
+              <li>
+                <a href="#">Data Scientists</a>
+              </li>
+              <li>
+                <a href="#">Software Engineers</a>
+              </li>
+              <li>
+                <a href="#">Software Architects</a>
+              </li>
+              <li>
+                <a href="#">Full-Stack Developers</a>
+              </li>
+              <hr>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="col-3">
+          <h4>Learn More</h4>
+          <nav class="link-nav-3">
+            <ul>
+              <li>
+                <a href="#">Artificial-Intelligence</a>
+              </li>
+              <li>
+                <a href="#">Machine-Learning</a>
+              </li>
+              <li>
+                <a href="#">Metaverse</a>
+              </li>
+              <li>
+                <a href="#">Data Analyst</a>
+              </li>
+              <hr>
+            </ul>
+          </nav>
+        </div>
+        
+
+        <div class="col-3">
+          <h4>Get Involved</h4>
+          <nav class="link-nav-4">
+            <ul>
+              <li>
+                <a href="#">Softwares</a>
+              </li>
+              <li>
+                <a href="#">Web Applications</a>
+              </li>
+              <li>
+                <a href="#">Create META</a>
+              </li>
+              <li>
+                <a href="#">OS</a>
+              </li>
+              <hr>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+
+    <div class="copyitem-soma">
+      <div class="container-lst">
+        <p class="cpyrt">© 2020 My WebApp —
+          <a href="https://twitter.com/simraank" rel="noopener noreferrer" class="attwi" target="_blank">@SimraanK</a>
+        </p>
+
+        <div class="social-itm">
+          <a href="https://instagram.com" class="fa fa-instagram" target="_blank"></a>
+          <a href="https://twitter.com" class="fa fa-twitter" target="_blank"></a>
+          <a href="https://linkedin.com" class="fa fa-linkedin" target="_blank"></a>
+          <a href="https://facebook.com" class="fa fa-facebook" target="_blank"></a>
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  </footer>
+
+
+
+
+
+
+  {% endblock body %}
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+    </script>
+
+
+</body>
+
+</html>
